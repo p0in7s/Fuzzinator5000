@@ -1,60 +1,27 @@
-# Extension Template Project
+# Introduction
 
-This project was created by PortSwigger to help you quickly start developing extensions in Java.
+**Fuzzinator5000** is a powerful Burp Suite extension for advanced fuzzing and request comparison workflows. It enables security testers to efficiently fuzz HTTP requests with custom payloads while simultaneously testing dependent requests and comparing responses.
 
-## Contents
-* [Before you start](#before-you-start)
-* [Writing your extension](#writing-your-extension)
-* [Building your extension](#building-your-extension)
-* [Loading the JAR file into Burp](#loading-the-jar-file-into-burp)
-* [Sharing your extension](#sharing-your-extension)
+**Key Features:**
+* Dual Request Testing: Run two HTTP requests side-by-side with independent editors and viewers
+* Intelligent Fuzzing Engine: Replace markers in requests with payloads from custom wordlists
+* Sequential & Multithreaded Modes: Choose between sequential payload execution or parallel processing
+* Auto-Chain Requests: Automatically execute a second request after each fuzzed request (e.g., for dependency chains)
+* Response Comparison: Side-by-side response viewer with diff highlighting to identify anomalies
+* Results Dashboard: Comprehensive table tracking all fuzzing iterations with payload, status, and response sizes
+* Response Filtering: Filter results by response size to quickly identify interesting variations
+* Direct Request/Response Viewing: Click any result to inspect full request/response details
 
+**Use Cases:**
+* Testing parameter injection vulnerabilities across interdependent endpoints
+* Fuzzing APIs that require chained requests
+* Identifying response anomalies when payloads are varied
+* Comparing response differences across multiple payload variations
+* Efficient wordlist-based security testing workflows
 
-## Before you start
+## Demo
 
-Before you begin development, make sure that your project's JDK is set to version "21".
-
-
-## Writing your extension
-
-To begin development, open the [Extension.java](src/main/java/Extension.java) file. It includes an example of setting your extension's name, which you can customize with your own logic.
-
-The template contains the following components for building your extension:
-
-* The `initialize` method. This is the entry point for your extension. It is called when the extension is loaded and receives a [montoyaApi](https://portswigger.github.io/burp-extensions-montoya-api/javadoc/burp/api/montoya/MontoyaApi.html) argument, which provides access to all Montoya API features.
-* The `Extension` class. This implements the BurpExtension interface, so your extension is recognized and loaded by Burp.
-
-#### Related resources
-
-* For more information on Montoya API features, see the [JavaDoc](https://portswigger.github.io/burp-extensions-montoya-api/javadoc/burp/api/montoya/MontoyaApi.html).
-* To explore example extensions, visit our [GitHub repository](https://github.com/PortSwigger/burp-extensions-montoya-api-examples).
-* For more information on creating extensions, see our [documentation](https://portswigger.net/burp/documentation/desktop/extend-burp/extensions/creating).
-* For a beginner tutorial, see [Writing your first extension](https://portswigger.net/burp/documentation/desktop/extend-burp/extensions/creating/first-extension).
-* If you have any questions or need help from the community, join our [Discord channel](https://discord.com/channels/1159124119074381945/1164175825474686996).
-
-### Vibe Coding Your Extension with AI
-
-You can use an LLM to help you write your extension. To support this, we've included a [`CLAUDE.md`](./CLAUDE.md) file and supporting [documentation](./docs) that provide essential context for the model.
-
-#### Vibe Coding with Claude Code
-
-To use this file with Claude Code:
-
-1. Open a terminal and navigate to the `ExtensionTemplateProject` folder.
-2. Run Claude Code using the following command: `claude`.
-3. Prompt Claude to create some code for your extension.
-
-Claude should automatically read the contents of the `ExtensionTemplateProject` folder, including the `CLAUDE.md` file, then create draft code for you to review. If you think it hasn't read the `CLAUDE.md` file, directly prompt it to do so before continuing.
-
-#### Vibe Coding with Other LLMs
-
-If you're using an LLM other than Claude Code, prompt the LLM to read the `CLAUDE.md` file and supporting documentation from the `docs` folder, or provide their contents as part of your context window.
-
----
-
-## Building your extension
-
-When you're ready to test and use your extension, follow these steps to build a JAR file and load it into Burp.
+![Fuzzinator5000 Demo](./fuzzinator.mp4)
 
 ### Building the JAR file
 
@@ -79,7 +46,7 @@ To load the JAR file into Burp:
 7. Review any messages displayed in the **Output** and **Errors** tabs.
 8. Click **Close**.
 
-Your extension is loaded and listed in the **Burp extensions** table. You can test its behavior and make changes to the code as necessary.
+Your extension is loaded and listed in the **Burp extensions** table.
 
 ### Reloading the JAR file in Burp
 
@@ -91,14 +58,3 @@ To quickly reload your extension in Burp:
 
 1. In Burp, go to **Extensions > Installed**.
 2. Hold `Ctrl` or `⌘`, and select the **Loaded** checkbox next to your extension.
-
----
-
-## Sharing your extension
-
-Once you've built your extension, we'd love to see what you've created!
-
-Share your extension on our [PortSwigger Discord](https://discord.com/channels/1159124119074381945/1164175825474686996) #extensions channel to get feedback, showcase your work, and connect with other developers.
-Then take it to the next level by submitting your extension to the BApp store, making it available to the community of 80,000+ users worldwide.
-
-For guidance on the submission process, see [Submitting extensions to the BApp store](https://portswigger.net/burp/documentation/desktop/extend-burp/extensions/creating/bapp-store-submitting-extensions).
