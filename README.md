@@ -19,10 +19,6 @@
 * Comparing response differences across multiple payload variations
 * Efficient wordlist-based security testing workflows
 
-## Demo
-
-![Fuzzinator5000 Demo](./fuzzinator.mp4)
-
 ### Building the JAR file
 
 To build the JAR file, run the following command in the root directory of this project:
