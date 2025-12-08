@@ -54,3 +54,18 @@ To quickly reload your extension in Burp:
 
 1. In Burp, go to **Extensions > Installed**.
 2. Hold `Ctrl` or `⌘`, and select the **Loaded** checkbox next to your extension.
+
+---
+
+# Common Errors
+
+if you experience errors such as:
+
+```
+java.lang.IllegalArgumentException: HTTP service cannot be null
+```
+
+Make sure you have used the proper way to send a request to the extension. Right click in "targets" and send from there, dont manually insert the request.
+
+# Changelog
+- 1.0.0 - Release
